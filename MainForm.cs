@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace 管理系统
 {
-    public partial class HomePage : Form
+    public partial class MainForm : Form
     {
-        public HomePage()
+        public MainForm()
         {
             InitializeComponent();
         }
@@ -23,7 +23,7 @@ namespace 管理系统
         
         private void 修改密码ToolStripMenuItem_Click(object sender,EventArgs e)
         {
-            ModPwd newform = new ModPwd();
+            frmModPwd newform = new frmModPwd();
             newform.Show();
         }
 
@@ -39,7 +39,7 @@ namespace 管理系统
 
         private void 添加管理员ToolStripMenuItem_Click(object sender,EventArgs e)
         {
-            Admin_add newform = new Admin_add();
+            frmAdmin newform = new frmAdmin();
             newform.Show();
         }
 
@@ -50,7 +50,7 @@ namespace 管理系统
 
         private void 提单系统ToolStripMenuItem_Click(object sender,EventArgs e)
         {
-            TiDan newform = new TiDan();
+            frmBill newform = new frmBill();
             newform.Show();
         }
 

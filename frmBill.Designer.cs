@@ -1,6 +1,6 @@
 ﻿namespace 管理系统
 {
-    partial class TiDan
+    partial class frmBill
     {
         /// <summary>
         /// Required designer variable.

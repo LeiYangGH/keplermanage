@@ -49,30 +49,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin_add.cs">
+    <Compile Include="frmAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin_add.Designer.cs">
-      <DependentUpon>Admin_add.cs</DependentUpon>
+    <Compile Include="frmAdmin.Designer.cs">
+      <DependentUpon>frmAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="Class1.cs" />
-    <Compile Include="denglu.cs">
+    <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="denglu.Designer.cs">
-      <DependentUpon>denglu.cs</DependentUpon>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="HomePage.cs">
+    <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HomePage.Designer.cs">
-      <DependentUpon>HomePage.cs</DependentUpon>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModPwd.cs">
+    <Compile Include="frmModPwd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ModPwd.Designer.cs">
-      <DependentUpon>ModPwd.cs</DependentUpon>
+    <Compile Include="frmModPwd.Designer.cs">
+      <DependentUpon>frmModPwd.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -86,11 +86,11 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="TiDan.cs">
+    <Compile Include="frmBill.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TiDan.Designer.cs">
-      <DependentUpon>TiDan.cs</DependentUpon>
+    <Compile Include="frmBill.Designer.cs">
+      <DependentUpon>frmBill.cs</DependentUpon>
     </Compile>
     <Compile Include="管理系统DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -117,18 +117,18 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="denglu.resx">
-      <DependentUpon>denglu.cs</DependentUpon>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HomePage.resx">
-      <DependentUpon>HomePage.cs</DependentUpon>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="TiDan.resx">
-      <DependentUpon>TiDan.cs</DependentUpon>
+    <EmbeddedResource Include="frmBill.resx">
+      <DependentUpon>frmBill.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

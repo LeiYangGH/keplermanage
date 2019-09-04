@@ -1,6 +1,6 @@
 ﻿namespace 管理系统
 {
-    partial class Admin_add
+    partial class frmAdmin
     {
         /// <summary>
         /// Required designer variable.

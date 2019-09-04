@@ -11,9 +11,9 @@ using System.Data.SqlClient;
 
 namespace 管理系统
 {
-    public partial class TiDan : Form
+    public partial class frmBill : Form
     {
-        public TiDan()
+        public frmBill()
         {
             InitializeComponent();
         }

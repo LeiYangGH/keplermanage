@@ -1,6 +1,6 @@
 ﻿namespace 管理系统
 {
-    partial class ModPwd
+    partial class frmModPwd
     {
         /// <summary>
         /// Required designer variable.

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace 管理系统
 {
-    public partial class Admin_add : Form
+    public partial class frmAdmin : Form
     {
-        public Admin_add()
+        public frmAdmin()
         {
             InitializeComponent();
         }
@@ -20,7 +20,7 @@ namespace 管理系统
         private void Admin_add_Load(object sender,EventArgs e)
         {
             //判断是否有权限
-            if (denglu.ncx.ToString().Trim() != "超级管理员")
+            if (Login.ncx.ToString().Trim() != "超级管理员")
             {
                 MessageBox.Show("对不起，没有权限");
                 this.Close();

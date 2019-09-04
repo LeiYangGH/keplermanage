@@ -18,7 +18,7 @@ namespace 管理系统
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new denglu());
+            Application.Run(new Login());
         }
     }
 }

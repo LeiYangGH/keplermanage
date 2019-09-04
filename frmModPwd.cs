@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace 管理系统
 {
-    public partial class ModPwd : Form
+    public partial class frmModPwd : Form
     {
-        public ModPwd()
+        public frmModPwd()
         {
             InitializeComponent();
         }
@@ -21,7 +21,7 @@ namespace 管理系统
             {
                 //查找当前用户
                 string sql;
-                sql = "select * from admin where Name='" + denglu.nuser + "'";
+                sql = "select * from admin where Name='" + Login.nuser + "'";
                 DataSet result = new DataSet();
                 result = new Class1().hsggetdata(sql);
                 if (result != null)
@@ -32,7 +32,7 @@ namespace 管理系统
                         if (TextBox1.Text.ToString().Trim() == result.Tables[0].Rows[0]["Pwd"].ToString().Trim())
                         {
                             //执行修改操作
-                            sql = "update admin set Pwd='" + TextBox2.Text.ToString().Trim() + "' where Name='" + denglu.nuser + "'";
+                            sql = "update admin set Pwd='" + TextBox2.Text.ToString().Trim() + "' where Name='" + Login.nuser + "'";
                             int dd = 0;
                             dd = new Class1().hsgexucute(sql);
                             if (dd == 1)

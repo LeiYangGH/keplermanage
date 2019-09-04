@@ -10,10 +10,10 @@ using System.Data.SqlClient;
 
 namespace 管理系统
 {
-    public partial class denglu : Form
+    public partial class Login : Form
     {
         public static string nuser, ncx;
-        public denglu()
+        public Login()
         {
             InitializeComponent();
         }
@@ -62,7 +62,7 @@ namespace 管理系统
                     nuser = result.Tables[0].Rows[0]["Name"].ToString().Trim();  //给全局变量当前用户nuser赋值
                     ncx = result.Tables[0].Rows[0]["cx"].ToString().Trim();  //给全局变量当前权限ncx赋值
                     this.Hide();
-                    HomePage newform = new HomePage();
+                    MainForm newform = new MainForm();
                     newform.Show();
                 }
                 else
