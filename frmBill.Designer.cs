@@ -28,8 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.BiaoTi = new System.Windows.Forms.Label();
             this.JiLu = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,7 +52,6 @@
             this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column21 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.tiDanBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Column22 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.Column23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -112,7 +110,6 @@
             this.JSSJ = new System.Windows.Forms.Label();
             this.JSSJ1 = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.JiLu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tiDanBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -135,14 +132,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.JiLu.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.JiLu.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.JiLu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.JiLu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.JiLu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.JiLu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -171,7 +168,7 @@
             this.JiLu.Location = new System.Drawing.Point(40, 467);
             this.JiLu.Name = "JiLu";
             this.JiLu.RowTemplate.Height = 23;
-            this.JiLu.Size = new System.Drawing.Size(1523, 194);
+            this.JiLu.Size = new System.Drawing.Size(1232, 194);
             this.JiLu.TabIndex = 3;
             this.JiLu.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.JiLu_DataError);
             // 
@@ -347,20 +344,14 @@
             // Column21
             // 
             this.Column21.DataPropertyName = "KSSJ";
-            this.Column21.DataSource = this.tiDanBindingSource;
             this.Column21.HeaderText = "开始时间";
             this.Column21.Name = "Column21";
             this.Column21.ReadOnly = true;
             this.Column21.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
-            // tiDanBindingSource
-            // 
-            this.tiDanBindingSource.DataMember = "TiDan";
-            // 
             // Column22
             // 
             this.Column22.DataPropertyName = "JSSJ";
-            this.Column22.DataSource = this.tiDanBindingSource;
             this.Column22.HeaderText = "结束时间";
             this.Column22.Name = "Column22";
             this.Column22.ReadOnly = true;
@@ -454,7 +445,6 @@
             // 
             // cboFHFS1
             // 
-            this.cboFHFS1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.tiDanBindingSource, "FHFS", true));
             this.cboFHFS1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboFHFS1.Items.AddRange(new object[] {
             "IC卡发货",
@@ -910,14 +900,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1575, 757);
+            this.ClientSize = new System.Drawing.Size(1284, 757);
             this.Controls.Add(this.JiLu);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.BiaoTi);
             this.Name = "frmBill";
             this.Text = "TiDan";
             ((System.ComponentModel.ISupportInitialize)(this.JiLu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tiDanBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -984,7 +973,6 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.BindingSource tiDanBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;

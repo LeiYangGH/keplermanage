@@ -22,8 +22,7 @@ namespace 管理系统
         {
             string sql;
             sql = "select*from TiDan";
-            DataSet result = new DataSet();
-            result = new SqlHelper().hsggetdata(sql);
+            //result = new SqlHelper().hsggetdata(sql);
             //this.tiDanTableAdapter.Fill(this.管理系统DataSet.TiDan);
         }
 
@@ -98,7 +97,20 @@ namespace 管理系统
                     ti.FHFS = selectedFHFS;
                     //这里你先把各种值写死，暂时不管界面填的什么
                     ti.CZY = "xxx";
-                    //其他字段
+                    ti.BZ = "xxx";
+                    ti.CPGH = "xxx";
+                    ti.CPH = "xxx";
+                    //ti.FHFS = "aaa";
+                    ti.HC = "xxx";
+                    ti.HTH = "xxx";
+                    ti.HWH = "xxx";
+                    ti.JSSJ = DateTime.Now;
+                    ti.JZ = 11;
+                    ti.LSH = "xxx";
+                    ti.CPGH = "xxx";
+                    ti.TDH = "xxx";
+
+                    //其
 
                     entities.TiDans.Add(ti);
                     entities.SaveChanges();
@@ -109,6 +121,9 @@ namespace 管理系统
                 {
 
                     MessageBox.Show(ex.Message);
+                    foreach (var err in entities.GetValidationErrors())
+                        MessageBox.Show(String.Join(",",
+                            err.ValidationErrors.Select(x => x.ErrorMessage)));
 
                 }
             }
