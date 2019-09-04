@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ManagementModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="admin">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Pwd" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="cx" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TiDan">
+          <Key>
+            <PropertyRef Name="TDH" />
+          </Key>
+          <Property Name="FHFS" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CPH" Type="varchar" MaxLength="50" />
+          <Property Name="LSH" Type="varchar" MaxLength="50" />
+          <Property Name="QFH" Type="varchar" MaxLength="50" />
+          <Property Name="TDH" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="YFL" Type="int" Nullable="false" />
+          <Property Name="SFL" Type="int" />
+          <Property Name="CZY" Type="varchar" MaxLength="50" />
+          <Property Name="HTH" Type="varchar" MaxLength="50" />
+          <Property Name="CPGH" Type="varchar" MaxLength="50" />
+          <Property Name="PCH" Type="varchar" MaxLength="50" />
+          <Property Name="HWH" Type="varchar" MaxLength="50" />
+          <Property Name="PZ" Type="int" />
+          <Property Name="MZ" Type="int" />
+          <Property Name="JZ" Type="int" />
+          <Property Name="WLMC" Type="varchar" MaxLength="50" />
+          <Property Name="HC" Type="varchar" MaxLength="50" />
+          <Property Name="FHDW" Type="varchar" MaxLength="50" />
+          <Property Name="SHDW" Type="varchar" MaxLength="50" />
+          <Property Name="LX" Type="varchar" MaxLength="50" />
+          <Property Name="KSSJ" Type="datetime" />
+          <Property Name="JSSJ" Type="datetime" />
+          <Property Name="BZ" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="ManagementModelStoreContainer">
+          <EntitySet Name="admin" EntityType="Self.admin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TiDan" EntityType="Self.TiDan" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ManagementModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="admin">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Pwd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cx" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TiDan">
+          <Key>
+            <PropertyRef Name="TDH" />
+          </Key>
+          <Property Name="FHFS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CPH" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LSH" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="QFH" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TDH" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="YFL" Type="Int32" Nullable="false" />
+          <Property Name="SFL" Type="Int32" />
+          <Property Name="CZY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="HTH" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CPGH" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PCH" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="HWH" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PZ" Type="Int32" />
+          <Property Name="MZ" Type="Int32" />
+          <Property Name="JZ" Type="Int32" />
+          <Property Name="WLMC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="HC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FHDW" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SHDW" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LX" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="KSSJ" Type="DateTime" Precision="3" />
+          <Property Name="JSSJ" Type="DateTime" Precision="3" />
+          <Property Name="BZ" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="ManagementEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="admins" EntityType="Self.admin" />
+          <EntitySet Name="TiDans" EntityType="Self.TiDan" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ManagementModelStoreContainer" CdmEntityContainer="ManagementEntities">
+          <EntitySetMapping Name="admins">
+            <EntityTypeMapping TypeName="ManagementModel.admin">
+              <MappingFragment StoreEntitySet="admin">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Pwd" ColumnName="Pwd" />
+                <ScalarProperty Name="cx" ColumnName="cx" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TiDans">
+            <EntityTypeMapping TypeName="ManagementModel.TiDan">
+              <MappingFragment StoreEntitySet="TiDan">
+                <ScalarProperty Name="FHFS" ColumnName="FHFS" />
+                <ScalarProperty Name="CPH" ColumnName="CPH" />
+                <ScalarProperty Name="LSH" ColumnName="LSH" />
+                <ScalarProperty Name="QFH" ColumnName="QFH" />
+                <ScalarProperty Name="TDH" ColumnName="TDH" />
+                <ScalarProperty Name="YFL" ColumnName="YFL" />
+                <ScalarProperty Name="SFL" ColumnName="SFL" />
+                <ScalarProperty Name="CZY" ColumnName="CZY" />
+                <ScalarProperty Name="HTH" ColumnName="HTH" />
+                <ScalarProperty Name="CPGH" ColumnName="CPGH" />
+                <ScalarProperty Name="PCH" ColumnName="PCH" />
+                <ScalarProperty Name="HWH" ColumnName="HWH" />
+                <ScalarProperty Name="PZ" ColumnName="PZ" />
+                <ScalarProperty Name="MZ" ColumnName="MZ" />
+                <ScalarProperty Name="JZ" ColumnName="JZ" />
+                <ScalarProperty Name="WLMC" ColumnName="WLMC" />
+                <ScalarProperty Name="HC" ColumnName="HC" />
+                <ScalarProperty Name="FHDW" ColumnName="FHDW" />
+                <ScalarProperty Name="SHDW" ColumnName="SHDW" />
+                <ScalarProperty Name="LX" ColumnName="LX" />
+                <ScalarProperty Name="KSSJ" ColumnName="KSSJ" />
+                <ScalarProperty Name="JSSJ" ColumnName="JSSJ" />
+                <ScalarProperty Name="BZ" ColumnName="BZ" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
