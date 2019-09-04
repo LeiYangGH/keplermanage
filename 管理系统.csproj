@@ -55,7 +55,7 @@
     <Compile Include="frmAdmin.Designer.cs">
       <DependentUpon>frmAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Class1.cs" />
+    <Compile Include="SqlHelper.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,28 +92,12 @@
     <Compile Include="frmBill.Designer.cs">
       <DependentUpon>frmBill.cs</DependentUpon>
     </Compile>
-    <Compile Include="管理系统DataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>管理系统DataSet.xsd</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="管理系统DataSet.xsc">
-      <DependentUpon>管理系统DataSet.xsd</DependentUpon>
-    </None>
-    <None Include="管理系统DataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>管理系统DataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="管理系统DataSet.xss">
-      <DependentUpon>管理系统DataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

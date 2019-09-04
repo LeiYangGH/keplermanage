@@ -23,7 +23,7 @@ namespace 管理系统
                 string sql;
                 sql = "select * from admin where Name='" + Login.nuser + "'";
                 DataSet result = new DataSet();
-                result = new Class1().hsggetdata(sql);
+                result = new SqlHelper().hsggetdata(sql);
                 if (result != null)
                 {
                     if (result.Tables[0].Rows.Count > 0)
@@ -34,7 +34,7 @@ namespace 管理系统
                             //执行修改操作
                             sql = "update admin set Pwd='" + TextBox2.Text.ToString().Trim() + "' where Name='" + Login.nuser + "'";
                             int dd = 0;
-                            dd = new Class1().hsgexucute(sql);
+                            dd = new SqlHelper().hsgexucute(sql);
                             if (dd == 1)
                             {
                                 //执行成功,给出提示

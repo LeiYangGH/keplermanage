@@ -23,8 +23,8 @@ namespace 管理系统
             string sql;
             sql = "select*from TiDan";
             DataSet result = new DataSet();
-            result = new Class1().hsggetdata(sql);
-            this.tiDanTableAdapter.Fill(this.管理系统DataSet.TiDan);
+            result = new SqlHelper().hsggetdata(sql);
+            //this.tiDanTableAdapter.Fill(this.管理系统DataSet.TiDan);
         }
 
         private void ControlStatus()
@@ -97,13 +97,13 @@ namespace 管理系统
             {
                 sql = "insert into TiDan(HWH,WLMC) values('" + HWH1.Text.ToString().Trim() + "','" + WLMC1.Text.ToString().Trim() + "')";
                 int dd = 0;
-                dd = new Class1().hsgexucute(sql);
+                dd = new SqlHelper().hsgexucute(sql);
                 if (dd == 1)
                  {
                    //如插入成功，再次查询即可刷新
                    sql = "select*from TiDan";
                    DataSet result2 = new DataSet();
-                   result2 = new Class1().hsggetdata(sql);
+                   result2 = new SqlHelper().hsggetdata(sql);
                    JiLu.DataSource = result2.Tables[0];
                    MessageBox.Show("添加成功");
                  }

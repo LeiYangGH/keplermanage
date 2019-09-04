@@ -54,7 +54,7 @@ namespace 管理系统
             //给sql赋值,查询用户表中是否有匹配用户名和密码
             sql = "select * from admin where Name='" + TextBox1.Text.ToString().Trim() + "'and Pwd='" + TextBox2.Text.ToString().Trim()+"'";
             DataSet result = new DataSet();   //定义变量result为数据集型
-            result = new Class1().hsggetdata(sql);  //将查询到的结果放入数据集result中
+            result = new SqlHelper().hsggetdata(sql);  //将查询到的结果放入数据集result中
             if(result!=null)
             {
                 if(result.Tables[0].Rows.Count>0)  //如果查询结果不为空

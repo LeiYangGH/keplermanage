@@ -54,7 +54,6 @@
             this.Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column21 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.tiDanBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.管理系统DataSet = new 管理系统.管理系统DataSet();
             this.Column22 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.Column23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -112,10 +111,8 @@
             this.KSSJ1 = new System.Windows.Forms.DateTimePicker();
             this.JSSJ = new System.Windows.Forms.Label();
             this.JSSJ1 = new System.Windows.Forms.DateTimePicker();
-            this.tiDanTableAdapter = new 管理系统.管理系统DataSetTableAdapters.TiDanTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.JiLu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tiDanBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.管理系统DataSet)).BeginInit();
+ 
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -361,12 +358,10 @@
             // tiDanBindingSource
             // 
             this.tiDanBindingSource.DataMember = "TiDan";
-            this.tiDanBindingSource.DataSource = this.管理系统DataSet;
             // 
             // 管理系统DataSet
             // 
-            this.管理系统DataSet.DataSetName = "管理系统DataSet";
-            this.管理系统DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+ 
             // 
             // Column22
             // 
@@ -921,7 +916,6 @@
             // 
             // tiDanTableAdapter
             // 
-            this.tiDanTableAdapter.ClearBeforeFill = true;
             // 
             // TiDan
             // 
@@ -934,8 +928,7 @@
             this.Name = "TiDan";
             this.Text = "TiDan";
             ((System.ComponentModel.ISupportInitialize)(this.JiLu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tiDanBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.管理系统DataSet)).EndInit();
+ 
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -1002,9 +995,7 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
-        private 管理系统DataSet 管理系统DataSet;
         private System.Windows.Forms.BindingSource tiDanBindingSource;
-        private 管理系统DataSetTableAdapters.TiDanTableAdapter tiDanTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
