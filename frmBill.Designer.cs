@@ -58,7 +58,7 @@
             this.Column23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button8 = new System.Windows.Forms.Button();
-            this.FHFS1 = new System.Windows.Forms.ComboBox();
+            this.cboFHFS1 = new System.Windows.Forms.ComboBox();
             this.button7 = new System.Windows.Forms.Button();
             this.FHFS = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
@@ -71,7 +71,7 @@
             this.CPH1 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.LSH = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.LSH1 = new System.Windows.Forms.TextBox();
             this.QFH = new System.Windows.Forms.Label();
             this.QFH1 = new System.Windows.Forms.TextBox();
@@ -112,7 +112,7 @@
             this.JSSJ = new System.Windows.Forms.Label();
             this.JSSJ1 = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.JiLu)).BeginInit();
- 
+            ((System.ComponentModel.ISupportInitialize)(this.tiDanBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -348,31 +348,23 @@
             // 
             this.Column21.DataPropertyName = "KSSJ";
             this.Column21.DataSource = this.tiDanBindingSource;
-            this.Column21.DisplayMember = "KSSJ";
             this.Column21.HeaderText = "开始时间";
             this.Column21.Name = "Column21";
             this.Column21.ReadOnly = true;
             this.Column21.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column21.ValueMember = "KSSJ";
             // 
             // tiDanBindingSource
             // 
             this.tiDanBindingSource.DataMember = "TiDan";
             // 
-            // 管理系统DataSet
-            // 
- 
-            // 
             // Column22
             // 
             this.Column22.DataPropertyName = "JSSJ";
             this.Column22.DataSource = this.tiDanBindingSource;
-            this.Column22.DisplayMember = "JSSJ";
             this.Column22.HeaderText = "结束时间";
             this.Column22.Name = "Column22";
             this.Column22.ReadOnly = true;
             this.Column22.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column22.ValueMember = "JSSJ";
             // 
             // Column23
             // 
@@ -391,7 +383,7 @@
             this.groupBox1.AutoSize = true;
             this.groupBox1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBox1.Controls.Add(this.button8);
-            this.groupBox1.Controls.Add(this.FHFS1);
+            this.groupBox1.Controls.Add(this.cboFHFS1);
             this.groupBox1.Controls.Add(this.button7);
             this.groupBox1.Controls.Add(this.FHFS);
             this.groupBox1.Controls.Add(this.button6);
@@ -404,7 +396,7 @@
             this.groupBox1.Controls.Add(this.CPH1);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.LSH);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btnAdd);
             this.groupBox1.Controls.Add(this.LSH1);
             this.groupBox1.Controls.Add(this.QFH);
             this.groupBox1.Controls.Add(this.QFH1);
@@ -460,18 +452,18 @@
             this.button8.Text = "删除交易记录";
             this.button8.UseVisualStyleBackColor = true;
             // 
-            // FHFS1
+            // cboFHFS1
             // 
-            this.FHFS1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.tiDanBindingSource, "FHFS", true));
-            this.FHFS1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.FHFS1.Items.AddRange(new object[] {
+            this.cboFHFS1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.tiDanBindingSource, "FHFS", true));
+            this.cboFHFS1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboFHFS1.Items.AddRange(new object[] {
             "IC卡发货",
             "提单号发货"});
-            this.FHFS1.Location = new System.Drawing.Point(83, 32);
-            this.FHFS1.MaxLength = 9;
-            this.FHFS1.Name = "FHFS1";
-            this.FHFS1.Size = new System.Drawing.Size(121, 20);
-            this.FHFS1.TabIndex = 4;
+            this.cboFHFS1.Location = new System.Drawing.Point(83, 32);
+            this.cboFHFS1.MaxLength = 9;
+            this.cboFHFS1.Name = "cboFHFS1";
+            this.cboFHFS1.Size = new System.Drawing.Size(121, 20);
+            this.cboFHFS1.TabIndex = 4;
             // 
             // button7
             // 
@@ -576,15 +568,15 @@
             this.LSH.TabIndex = 0;
             this.LSH.Text = "流水号";
             // 
-            // button1
+            // btnAdd
             // 
-            this.button1.Location = new System.Drawing.Point(1147, 8);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 45);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "生成提货单";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnAdd.Location = new System.Drawing.Point(1147, 8);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(94, 45);
+            this.btnAdd.TabIndex = 4;
+            this.btnAdd.Text = "生成提货单";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // LSH1
             // 
@@ -914,10 +906,7 @@
             this.JSSJ1.Size = new System.Drawing.Size(200, 21);
             this.JSSJ1.TabIndex = 0;
             // 
-            // tiDanTableAdapter
-            // 
-            // 
-            // TiDan
+            // frmBill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -925,10 +914,10 @@
             this.Controls.Add(this.JiLu);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.BiaoTi);
-            this.Name = "TiDan";
+            this.Name = "frmBill";
             this.Text = "TiDan";
             ((System.ComponentModel.ISupportInitialize)(this.JiLu)).EndInit();
- 
+            ((System.ComponentModel.ISupportInitialize)(this.tiDanBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -964,7 +953,7 @@
         private System.Windows.Forms.Label LX;
         private System.Windows.Forms.Label KSSJ;
         private System.Windows.Forms.Label JSSJ;
-        private System.Windows.Forms.ComboBox FHFS1;
+        private System.Windows.Forms.ComboBox cboFHFS1;
         private System.Windows.Forms.TextBox CPH1;
         private System.Windows.Forms.TextBox LSH1;
         private System.Windows.Forms.TextBox QFH1;
@@ -987,7 +976,7 @@
         private System.Windows.Forms.TextBox LX1;
         private System.Windows.Forms.DateTimePicker KSSJ1;
         private System.Windows.Forms.DateTimePicker JSSJ1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;

@@ -18,7 +18,7 @@ namespace 管理系统
             InitializeComponent();
         }
 
-        public void TiDan_Load(object sender,EventArgs e)
+        public void TiDan_Load(object sender, EventArgs e)
         {
             string sql;
             sql = "select*from TiDan";
@@ -39,11 +39,11 @@ namespace 管理系统
             this.HTH1.Text = "";
             this.CPGH1.Text = "";
             this.PCH1.Text = "";
-            this.HWH1.Text ="";
+            this.HWH1.Text = "";
             this.PZ1.Text = "";
             this.MZ1.Text = "";
             this.JZ1.Text = "";
-            this.WLMC1.Text ="";
+            this.WLMC1.Text = "";
             this.HC1.Text = "";
             this.FHDW.Text = "";
             this.SHDW1.Text = "";
@@ -52,11 +52,11 @@ namespace 管理系统
             this.JSSJ1.Value = Convert.ToDateTime("2019-01-01");
             this.BZ1.Text = "";
         }
-        
+
 
         private void FillControls()
         {
-            this.FHFS1.SelectedValue = this.JiLu[0, this.JiLu.CurrentCell.RowIndex].Value;
+            this.cboFHFS1.SelectedValue = this.JiLu[0, this.JiLu.CurrentCell.RowIndex].Value;
             this.CPH1.Text = this.JiLu[1, this.JiLu.CurrentCell.RowIndex].Value.ToString();
             this.LSH1.Text = this.JiLu[2, this.JiLu.CurrentCell.RowIndex].Value.ToString();
             this.QFH1.Text = this.JiLu[3, this.JiLu.CurrentCell.RowIndex].Value.ToString();
@@ -73,7 +73,7 @@ namespace 管理系统
             this.JZ1.Text = this.JiLu[14, this.JiLu.CurrentCell.RowIndex].Value.ToString();
             this.WLMC1.Text = this.JiLu[15, this.JiLu.CurrentCell.RowIndex].Value.ToString();
             this.HC1.Text = this.JiLu[16, this.JiLu.CurrentCell.RowIndex].Value.ToString();
-            this.FHDW1.Text= this.JiLu[17, this.JiLu.CurrentCell.RowIndex].Value.ToString();
+            this.FHDW1.Text = this.JiLu[17, this.JiLu.CurrentCell.RowIndex].Value.ToString();
             this.SHDW1.Text = this.JiLu[18, this.JiLu.CurrentCell.RowIndex].Value.ToString();
             this.LX1.Text = this.JiLu[19, this.JiLu.CurrentCell.RowIndex].Value.ToString();
             this.KSSJ1.Value = Convert.ToDateTime(this.JiLu[20, this.JiLu.CurrentCell.RowIndex].Value);
@@ -86,37 +86,38 @@ namespace 管理系统
         {
             e.Cancel = true;
         }
-        private void button1_Click(object sender,EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
-            string sql;
-            if (HWH1.Text.ToString().Trim() == ""||WLMC1.Text.ToString().Trim()=="")
+            using (var entities = new ManagementEntities())
             {
-                MessageBox.Show("货位号，物料名称不能为空");
+                try
+                {
+                    string selectedFHFS = this.cboFHFS1.Text;
+                    MessageBox.Show($"选择的发货方式是{selectedFHFS}准备添加.");
+                    TiDan ti = new TiDan();
+                    ti.FHFS = selectedFHFS;
+                    //这里你先把各种值写死，暂时不管界面填的什么
+                    ti.CZY = "xxx";
+                    //其他字段
+
+                    entities.TiDans.Add(ti);
+                    entities.SaveChanges();
+                    MessageBox.Show("已添加！");
+
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.Message);
+
+                }
             }
-            else
-            {
-                sql = "insert into TiDan(HWH,WLMC) values('" + HWH1.Text.ToString().Trim() + "','" + WLMC1.Text.ToString().Trim() + "')";
-                int dd = 0;
-                dd = new SqlHelper().hsgexucute(sql);
-                if (dd == 1)
-                 {
-                   //如插入成功，再次查询即可刷新
-                   sql = "select*from TiDan";
-                   DataSet result2 = new DataSet();
-                   result2 = new SqlHelper().hsggetdata(sql);
-                   JiLu.DataSource = result2.Tables[0];
-                   MessageBox.Show("添加成功");
-                 }
-                 else
-                  {
-                       MessageBox.Show("对不起，系统错误");
-                  }
-            }
+
 
         }
     }
-    
-    
 
-    
+
+
+
 }
