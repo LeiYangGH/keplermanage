@@ -12,19 +12,27 @@ namespace 管理系统
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    
+
     public partial class ManagementEntities : DbContext
     {
+#if LYPC
         public ManagementEntities()
-            : base("name=ManagementEntities")
+    : base("name=LYPCManagementEntities")
         {
         }
-    
+#else
+        public ManagementEntities()
+    : base("name=ManagementEntities")
+        {
+        }
+#endif
+
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
         }
-    
+
         public virtual DbSet<admin> admins { get; set; }
         public virtual DbSet<TiDan> TiDans { get; set; }
     }
