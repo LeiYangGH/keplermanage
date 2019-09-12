@@ -11,13 +11,19 @@ namespace 管理系统
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+
     public partial class TiDan
     {
+        [DisplayName("发货方式")]
         public string FHFS { get; set; }
+
+        //仿照着把其他列的中文名称加上
         public string CPH { get; set; }
         public string LSH { get; set; }
         public string QFH { get; set; }
+
+        [DisplayName("提单号")]
         public string TDH { get; set; }
         public int YFL { get; set; }
         public Nullable<int> SFL { get; set; }

@@ -55,36 +55,58 @@ namespace 管理系统
 
         private void FillControls()
         {
-            this.cboFHFS1.SelectedValue = this.JiLu[0, this.JiLu.CurrentCell.RowIndex].Value;
-            this.CPH1.Text = this.JiLu[1, this.JiLu.CurrentCell.RowIndex].Value.ToString();
-            this.LSH1.Text = this.JiLu[2, this.JiLu.CurrentCell.RowIndex].Value.ToString();
-            this.QFH1.Text = this.JiLu[3, this.JiLu.CurrentCell.RowIndex].Value.ToString();
-            this.TDH1.Text = this.JiLu[4, this.JiLu.CurrentCell.RowIndex].Value.ToString();
-            this.YFL1.Text = this.JiLu[5, this.JiLu.CurrentCell.RowIndex].Value.ToString();
-            this.SFL1.Text = this.JiLu[6, this.JiLu.CurrentCell.RowIndex].Value.ToString();
-            this.CZY1.Text = this.JiLu[7, this.JiLu.CurrentCell.RowIndex].Value.ToString();
-            this.HTH1.Text = this.JiLu[8, this.JiLu.CurrentCell.RowIndex].Value.ToString();
-            this.CPGH1.Text = this.JiLu[9, this.JiLu.CurrentCell.RowIndex].Value.ToString();
-            this.PCH1.Text = this.JiLu[10, this.JiLu.CurrentCell.RowIndex].Value.ToString();
-            this.HWH1.Text = this.JiLu[11, this.JiLu.CurrentCell.RowIndex].Value.ToString();
-            this.PZ1.Text = this.JiLu[12, this.JiLu.CurrentCell.RowIndex].Value.ToString();
-            this.MZ1.Text = this.JiLu[13, this.JiLu.CurrentCell.RowIndex].Value.ToString();
-            this.JZ1.Text = this.JiLu[14, this.JiLu.CurrentCell.RowIndex].Value.ToString();
-            this.WLMC1.Text = this.JiLu[15, this.JiLu.CurrentCell.RowIndex].Value.ToString();
-            this.HC1.Text = this.JiLu[16, this.JiLu.CurrentCell.RowIndex].Value.ToString();
-            this.FHDW1.Text = this.JiLu[17, this.JiLu.CurrentCell.RowIndex].Value.ToString();
-            this.SHDW1.Text = this.JiLu[18, this.JiLu.CurrentCell.RowIndex].Value.ToString();
-            this.LX1.Text = this.JiLu[19, this.JiLu.CurrentCell.RowIndex].Value.ToString();
-            this.KSSJ1.Value = Convert.ToDateTime(this.JiLu[20, this.JiLu.CurrentCell.RowIndex].Value);
-            this.JSSJ1.Value = Convert.ToDateTime(this.JiLu[21, this.JiLu.CurrentCell.RowIndex].Value);
-            this.JSSJ1.Value = Convert.ToDateTime(this.JiLu[21, this.JiLu.CurrentCell.RowIndex].Value);
-            this.JSSJ1.Value = Convert.ToDateTime(this.JiLu[21, this.JiLu.CurrentCell.RowIndex].Value);
-            this.BZ1.Text = this.JiLu[22, this.JiLu.CurrentCell.RowIndex].Value.ToString();
+            this.cboFHFS1.SelectedValue = this.dgvRecords[0, this.dgvRecords.CurrentCell.RowIndex].Value;
+            this.CPH1.Text = this.dgvRecords[1, this.dgvRecords.CurrentCell.RowIndex].Value.ToString();
+            this.LSH1.Text = this.dgvRecords[2, this.dgvRecords.CurrentCell.RowIndex].Value.ToString();
+            this.QFH1.Text = this.dgvRecords[3, this.dgvRecords.CurrentCell.RowIndex].Value.ToString();
+            this.TDH1.Text = this.dgvRecords[4, this.dgvRecords.CurrentCell.RowIndex].Value.ToString();
+            this.YFL1.Text = this.dgvRecords[5, this.dgvRecords.CurrentCell.RowIndex].Value.ToString();
+            this.SFL1.Text = this.dgvRecords[6, this.dgvRecords.CurrentCell.RowIndex].Value.ToString();
+            this.CZY1.Text = this.dgvRecords[7, this.dgvRecords.CurrentCell.RowIndex].Value.ToString();
+            this.HTH1.Text = this.dgvRecords[8, this.dgvRecords.CurrentCell.RowIndex].Value.ToString();
+            this.CPGH1.Text = this.dgvRecords[9, this.dgvRecords.CurrentCell.RowIndex].Value.ToString();
+            this.PCH1.Text = this.dgvRecords[10, this.dgvRecords.CurrentCell.RowIndex].Value.ToString();
+            this.HWH1.Text = this.dgvRecords[11, this.dgvRecords.CurrentCell.RowIndex].Value.ToString();
+            this.PZ1.Text = this.dgvRecords[12, this.dgvRecords.CurrentCell.RowIndex].Value.ToString();
+            this.MZ1.Text = this.dgvRecords[13, this.dgvRecords.CurrentCell.RowIndex].Value.ToString();
+            this.JZ1.Text = this.dgvRecords[14, this.dgvRecords.CurrentCell.RowIndex].Value.ToString();
+            this.WLMC1.Text = this.dgvRecords[15, this.dgvRecords.CurrentCell.RowIndex].Value.ToString();
+            this.HC1.Text = this.dgvRecords[16, this.dgvRecords.CurrentCell.RowIndex].Value.ToString();
+            this.FHDW1.Text = this.dgvRecords[17, this.dgvRecords.CurrentCell.RowIndex].Value.ToString();
+            this.SHDW1.Text = this.dgvRecords[18, this.dgvRecords.CurrentCell.RowIndex].Value.ToString();
+            this.LX1.Text = this.dgvRecords[19, this.dgvRecords.CurrentCell.RowIndex].Value.ToString();
+            this.KSSJ1.Value = Convert.ToDateTime(this.dgvRecords[20, this.dgvRecords.CurrentCell.RowIndex].Value);
+            this.JSSJ1.Value = Convert.ToDateTime(this.dgvRecords[21, this.dgvRecords.CurrentCell.RowIndex].Value);
+            this.JSSJ1.Value = Convert.ToDateTime(this.dgvRecords[21, this.dgvRecords.CurrentCell.RowIndex].Value);
+            this.JSSJ1.Value = Convert.ToDateTime(this.dgvRecords[21, this.dgvRecords.CurrentCell.RowIndex].Value);
+            this.BZ1.Text = this.dgvRecords[22, this.dgvRecords.CurrentCell.RowIndex].Value.ToString();
         }
         private void JiLu_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
             e.Cancel = true;
         }
+
+        private void RefreshDisplay()
+        {
+            using (var entities = new ManagementEntities())
+            {
+                try
+                {
+                    this.dgvRecords.DataSource = entities.TiDans.ToList();
+
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.Message);
+                    foreach (var err in entities.GetValidationErrors())
+                        MessageBox.Show(String.Join(",",
+                            err.ValidationErrors.Select(x => x.ErrorMessage)));
+
+                }
+            }
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             using (var entities = new ManagementEntities())
@@ -92,15 +114,17 @@ namespace 管理系统
                 try
                 {
                     string selectedFHFS = this.cboFHFS1.Text;
-                    MessageBox.Show($"选择的发货方式是{selectedFHFS}准备添加.");
+                    //MessageBox.Show($"选择的发货方式是{selectedFHFS}准备添加.");
                     TiDan ti = new TiDan();
                     ti.FHFS = selectedFHFS;
+                    //为了避免重复单号，违法主键约束，暂时用guid
+                    ti.TDH = System.Guid.NewGuid().ToString();
+
                     //这里你先把各种值写死，暂时不管界面填的什么
                     ti.CZY = "xxx";
                     ti.BZ = "xxx";
                     ti.CPGH = "xxx";
                     ti.CPH = "xxx";
-                    //ti.FHFS = "aaa";
                     ti.HC = "xxx";
                     ti.HTH = "xxx";
                     ti.HWH = "xxx";
@@ -108,13 +132,16 @@ namespace 管理系统
                     ti.JZ = 11;
                     ti.LSH = "xxx";
                     ti.CPGH = "xxx";
-                    ti.TDH = "xxx";
+
 
                     //其
 
                     entities.TiDans.Add(ti);
+
+                    entities.Database.Log = s => System.Diagnostics.Debug.WriteLine(s);
                     entities.SaveChanges();
-                    MessageBox.Show("已添加！");
+                    this.RefreshDisplay();
+                    //MessageBox.Show("已添加！");
 
                 }
                 catch (Exception ex)
@@ -128,6 +155,12 @@ namespace 管理系统
                 }
             }
 
+
+        }
+
+        private void Button5_Click(object sender, EventArgs e)
+        {
+            this.RefreshDisplay();
 
         }
     }
