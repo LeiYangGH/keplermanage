@@ -196,9 +196,28 @@ namespace 管理系统
 
         private void btnRemove_Click(object sender,EventArgs e)
         {
+
+        }
+
+        private void Button5_Click(object sender, EventArgs e)
+        {
+            this.RefreshDisplay();
+
+        }
+
+        private void Button7_Click(object sender, EventArgs e)
+        {
             using (var entities = new ManagementEntities())
             {
-                TiDan ti = entities.TiDans.Where(W => W.TDH == strid).FirstOrDefault();
+                //从选中的第一条记录里找到TDH，然后查询数据库，存在则删除
+                var selectedRows = this.dgvRecords.SelectedRows.OfType<DataGridViewRow>();
+                if(!selectedRows.Any())
+                {
+                    MessageBox.Show("请选择要删除的记录");
+                    return;
+                }
+                string selectedTDH = selectedRows.First().Cells["TDH"].Value.ToString();
+                TiDan ti = entities.TiDans.Where(W => W.TDH == selectedTDH).FirstOrDefault();
                 if (ti != null)
                 {
                     entities.TiDans.Remove(ti);
@@ -206,15 +225,8 @@ namespace 管理系统
                     dgvRecords.DataSource = entities.TiDans.ToList();
                     MessageBox.Show("记录删除成功");
                 }
-                else
-                    MessageBox.Show("请选择要删除的记录");
+                 
             }
-        }
-
-        private void Button5_Click(object sender, EventArgs e)
-        {
-            this.RefreshDisplay();
-
         }
     }
 

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.BiaoTi = new System.Windows.Forms.Label();
             this.dgvRecords = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -110,22 +110,21 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvRecords.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvRecords.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvRecords.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRecords.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvRecords.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRecords.Location = new System.Drawing.Point(40, 467);
             this.dgvRecords.Name = "dgvRecords";
             this.dgvRecords.ReadOnly = true;
             this.dgvRecords.RowTemplate.Height = 23;
-            this.dgvRecords.Size = new System.Drawing.Size(1232, 194);
+            this.dgvRecords.Size = new System.Drawing.Size(1494, 226);
             this.dgvRecords.TabIndex = 3;
-            this.dgvRecords.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvRecords_DataError);
             // 
             // groupBox1
             // 
@@ -188,7 +187,7 @@
             this.groupBox1.Controls.Add(this.KSSJ1);
             this.groupBox1.Controls.Add(this.JSSJ);
             this.groupBox1.Controls.Add(this.JSSJ1);
-            this.groupBox1.Location = new System.Drawing.Point(40, 125);
+            this.groupBox1.Location = new System.Drawing.Point(40, 102);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1478, 323);
             this.groupBox1.TabIndex = 2;
@@ -225,6 +224,7 @@
             this.button7.TabIndex = 10;
             this.button7.Text = "删除待发单";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.Button7_Click);
             // 
             // FHFS
             // 
@@ -663,7 +663,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1284, 757);
+            this.ClientSize = new System.Drawing.Size(1546, 789);
             this.Controls.Add(this.dgvRecords);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.BiaoTi);
