@@ -32,11 +32,11 @@
             this.BiaoTi = new System.Windows.Forms.Label();
             this.dgvRecords = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button8 = new System.Windows.Forms.Button();
+            this.btnRemove = new System.Windows.Forms.Button();
             this.cboFHFS1 = new System.Windows.Forms.ComboBox();
             this.button7 = new System.Windows.Forms.Button();
             this.FHFS = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
             this.SHDW1 = new System.Windows.Forms.TextBox();
             this.button5 = new System.Windows.Forms.Button();
             this.CPH = new System.Windows.Forms.Label();
@@ -125,7 +125,7 @@
             this.dgvRecords.RowTemplate.Height = 23;
             this.dgvRecords.Size = new System.Drawing.Size(1232, 194);
             this.dgvRecords.TabIndex = 3;
-            this.dgvRecords.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.JiLu_DataError);
+            this.dgvRecords.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvRecords_DataError);
             // 
             // groupBox1
             // 
@@ -134,11 +134,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.AutoSize = true;
             this.groupBox1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupBox1.Controls.Add(this.button8);
+            this.groupBox1.Controls.Add(this.btnRemove);
             this.groupBox1.Controls.Add(this.cboFHFS1);
             this.groupBox1.Controls.Add(this.button7);
             this.groupBox1.Controls.Add(this.FHFS);
-            this.groupBox1.Controls.Add(this.button6);
+            this.groupBox1.Controls.Add(this.btnClear);
             this.groupBox1.Controls.Add(this.SHDW1);
             this.groupBox1.Controls.Add(this.button5);
             this.groupBox1.Controls.Add(this.CPH);
@@ -195,14 +195,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = " ";
             // 
-            // button8
+            // btnRemove
             // 
-            this.button8.Location = new System.Drawing.Point(1378, 254);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(94, 45);
-            this.button8.TabIndex = 11;
-            this.button8.Text = "删除交易记录";
-            this.button8.UseVisualStyleBackColor = true;
+            this.btnRemove.Location = new System.Drawing.Point(1378, 254);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(94, 45);
+            this.btnRemove.TabIndex = 11;
+            this.btnRemove.Text = "删除交易记录";
+            this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // cboFHFS1
             // 
@@ -234,14 +235,14 @@
             this.FHFS.TabIndex = 0;
             this.FHFS.Text = "发货方式";
             // 
-            // button6
+            // btnClear
             // 
-            this.button6.Location = new System.Drawing.Point(1378, 182);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(94, 45);
-            this.button6.TabIndex = 9;
-            this.button6.Text = "清除";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnClear.Location = new System.Drawing.Point(1378, 182);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(94, 45);
+            this.btnClear.TabIndex = 9;
+            this.btnClear.Text = "清除";
+            this.btnClear.UseVisualStyleBackColor = true;
             // 
             // SHDW1
             // 
@@ -732,8 +733,8 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button btnRemove;
     }
 }
