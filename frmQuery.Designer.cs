@@ -1,6 +1,6 @@
 ﻿namespace 管理系统
 {
-    partial class Query
+    partial class frmQuery
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Query));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQuery));
             this.ToolStrip1 = new System.Windows.Forms.ToolStrip();
             this.ToolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.ToolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -79,7 +79,6 @@
             // 
             // ToolQuery
             // 
-            this.ToolQuery.Enabled = false;
             this.ToolQuery.Name = "ToolQuery";
             this.ToolQuery.Size = new System.Drawing.Size(36, 22);
             this.ToolQuery.Text = "查询";
@@ -145,6 +144,7 @@
             this.Cbb1.Name = "Cbb1";
             this.Cbb1.Size = new System.Drawing.Size(126, 20);
             this.Cbb1.TabIndex = 1;
+            this.Cbb1.SelectedIndexChanged += new System.EventHandler(this.Cbb1_SelectedIndexChanged);
             // 
             // Cbb2
             // 
@@ -153,6 +153,7 @@
             this.Cbb2.Name = "Cbb2";
             this.Cbb2.Size = new System.Drawing.Size(126, 20);
             this.Cbb2.TabIndex = 2;
+            this.Cbb2.SelectedIndexChanged += new System.EventHandler(this.Cbb2_SelectedIndexChanged);
             // 
             // Textbox2
             // 
@@ -160,6 +161,7 @@
             this.Textbox2.Name = "Textbox2";
             this.Textbox2.Size = new System.Drawing.Size(126, 21);
             this.Textbox2.TabIndex = 3;
+            this.Textbox2.TextChanged += new System.EventHandler(this.Textbox2_TextChanged);
             // 
             // GroupBox2
             // 
@@ -182,7 +184,7 @@
             this.DgvQuery.TabIndex = 0;
             this.DgvQuery.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.DgvQuery_DataError);
             // 
-            // Query
+            // frmQuery
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -192,7 +194,7 @@
             this.Controls.Add(this.ToolStrip1);
             this.Font = new System.Drawing.Font("新宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.MaximizeBox = false;
-            this.Name = "Query";
+            this.Name = "frmQuery";
             this.Text = "交易记录";
             this.Load += new System.EventHandler(this.Query_Load);
             this.ToolStrip1.ResumeLayout(false);

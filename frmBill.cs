@@ -248,7 +248,7 @@ namespace 管理系统
         }
         private void btnInquire_Click(object sender,EventArgs e)
         {
-            Query newform = new Query();
+            frmQuery newform = new frmQuery();
             newform.Show();
         }
     }

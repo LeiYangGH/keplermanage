@@ -19,7 +19,7 @@ namespace 管理系统
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Login());
-            Application.Run(new Query());
+            Application.Run(new frmQuery());
         }
     }
 }
