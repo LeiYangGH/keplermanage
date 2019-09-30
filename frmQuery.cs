@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Data.Entity.Core.Objects.DataClasses;
+using System.Linq.Expressions;
+using System.Reflection;
 
 namespace 管理系统
 {
@@ -90,7 +92,8 @@ namespace 管理系统
 
         }
 
-        private void ToolQuery_Click(object sender, EventArgs e)
+        //查询方式1：用if判断列名，需要若干if，好处是技术要求低，好写，坏处是每个列都要写一遍
+        private void QueryWithIfColumn()
         {
             using (var entities = new ManagementEntities())
             {
@@ -113,6 +116,75 @@ namespace 管理系统
                     MessageBox.Show(ex.Message);
                 }
             }
+        }
+
+
+
+        private static Expression<Func<T, bool>> CreateLike<T>(PropertyInfo prop, string value)
+        {
+            var parameter = Expression.Parameter(typeof(T), "f");
+            var propertyAccess = Expression.MakeMemberAccess(parameter, prop);
+            var mi = typeof(Queryable).GetMethods()
+                                .First(x => x.Name == "Contains") //IndexOf Contains
+                                .MakeGenericMethod(new[] { typeof(TiDan), propertyAccess.Type });
+            var indexOf = Expression.Call(propertyAccess, mi, null, Expression.Constant(value, typeof(string)), Expression.Constant(StringComparison.InvariantCultureIgnoreCase));
+            var like = Expression.GreaterThanOrEqual(indexOf, Expression.Constant(0));
+            return Expression.Lambda<Func<T, bool>>(like, parameter);
+        }
+        //查询方式2：用完全动态列命构建查询，坏处是技术要求高，好处是所有列只写一遍
+        //这个方法我还没写完，还无法执行
+        private void QueryWithDynamic()
+        {
+            using (var entities = new ManagementEntities())
+            {
+                //try
+                //{
+                string selectedColumn = this.Cbb1.Text.Trim();
+                string inputText = this.Textbox2.Text.Trim();
+                if (string.IsNullOrWhiteSpace(selectedColumn))
+                    return;
+
+                // The IQueryable data to query.  
+                IQueryable<TiDan> queryableData = entities.TiDans.AsQueryable<TiDan>();
+
+                // Compose the expression tree that represents the parameter to the predicate.  
+                ParameterExpression pe = Expression.Parameter(typeof(TiDan), "x");
+                var propertyAccess = Expression.Property(pe, selectedColumn);
+                var lambda = Expression.Lambda(propertyAccess, pe);
+                Expression right = Expression.Constant(inputText);
+                //                 var predicateBody = Expression.Call(
+                //                      right,
+                //   typeof(Queryable).GetMethods()
+                //                     .First(x => x.Name == "Contains")
+                //                     .MakeGenericMethod(new[] { typeof(TiDan), propertyAccess.Type }),
+
+                //    queryableData.Expression,
+                //    lambda,
+                //   pe
+                //);
+
+                //var predicateBody = Expression.Call(pe, "IndexOf", null, Expression.Constant(inputText, typeof(string)), Expression.Constant(StringComparison.CurrentCultureIgnoreCase, typeof(StringComparison)));
+                MethodCallExpression whereCallExpression = Expression.Call(
+typeof(Queryable),
+"Where",
+new Type[] { queryableData.ElementType },
+queryableData.Expression,
+Expression.Lambda<Func<string, bool>>(CreateLike<TiDan>(typeof(TiDan).GetProperties().FirstOrDefault(x => x.Name.Contains(selectedColumn)), inputText), new ParameterExpression[] { pe }));
+                IQueryable<TiDan> results = queryableData.Provider.CreateQuery<TiDan>(whereCallExpression);
+                this.DgvQuery.DataSource = results.ToList();
+
+                //}
+                //catch (Exception ex)
+                //{
+                //    MessageBox.Show(ex.Message);
+                //}
+            }
+        }
+
+        private void ToolQuery_Click(object sender, EventArgs e)
+        {
+            QueryWithIfColumn();
+            //QueryWithDynamic();
         }
         private void DgvQuery_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
