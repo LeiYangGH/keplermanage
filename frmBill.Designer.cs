@@ -40,7 +40,7 @@
             this.SHDW1 = new System.Windows.Forms.TextBox();
             this.button5 = new System.Windows.Forms.Button();
             this.CPH = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnInquire = new System.Windows.Forms.Button();
             this.FHDW1 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.CPH1 = new System.Windows.Forms.TextBox();
@@ -123,7 +123,7 @@
             this.dgvRecords.Name = "dgvRecords";
             this.dgvRecords.ReadOnly = true;
             this.dgvRecords.RowTemplate.Height = 23;
-            this.dgvRecords.Size = new System.Drawing.Size(1494, 226);
+            this.dgvRecords.Size = new System.Drawing.Size(1482, 130);
             this.dgvRecords.TabIndex = 3;
             // 
             // groupBox1
@@ -141,7 +141,7 @@
             this.groupBox1.Controls.Add(this.SHDW1);
             this.groupBox1.Controls.Add(this.button5);
             this.groupBox1.Controls.Add(this.CPH);
-            this.groupBox1.Controls.Add(this.button4);
+            this.groupBox1.Controls.Add(this.btnInquire);
             this.groupBox1.Controls.Add(this.FHDW1);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.CPH1);
@@ -199,7 +199,7 @@
             this.btnRemove.Location = new System.Drawing.Point(1378, 254);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(94, 45);
-            this.btnRemove.TabIndex = 11;
+            this.btnRemove.TabIndex = 28;
             this.btnRemove.Text = "删除交易记录";
             this.btnRemove.UseVisualStyleBackColor = true;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
@@ -214,14 +214,14 @@
             this.cboFHFS1.MaxLength = 9;
             this.cboFHFS1.Name = "cboFHFS1";
             this.cboFHFS1.Size = new System.Drawing.Size(121, 20);
-            this.cboFHFS1.TabIndex = 4;
+            this.cboFHFS1.TabIndex = 0;
             // 
             // button7
             // 
             this.button7.Location = new System.Drawing.Point(1147, 254);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(94, 45);
-            this.button7.TabIndex = 10;
+            this.button7.TabIndex = 27;
             this.button7.Text = "删除待发单";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.Button7_Click);
@@ -240,23 +240,24 @@
             this.btnClear.Location = new System.Drawing.Point(1378, 182);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(94, 45);
-            this.btnClear.TabIndex = 9;
+            this.btnClear.TabIndex = 26;
             this.btnClear.Text = "清除";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // SHDW1
             // 
             this.SHDW1.Location = new System.Drawing.Point(640, 221);
             this.SHDW1.Name = "SHDW1";
             this.SHDW1.Size = new System.Drawing.Size(121, 21);
-            this.SHDW1.TabIndex = 0;
+            this.SHDW1.TabIndex = 18;
             // 
             // button5
             // 
             this.button5.Location = new System.Drawing.Point(1147, 182);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(94, 45);
-            this.button5.TabIndex = 8;
+            this.button5.TabIndex = 25;
             this.button5.Text = "刷新";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.Button5_Click);
@@ -270,28 +271,29 @@
             this.CPH.TabIndex = 0;
             this.CPH.Text = "车牌号";
             // 
-            // button4
+            // btnInquire
             // 
-            this.button4.Location = new System.Drawing.Point(1378, 95);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(94, 45);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "查询";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnInquire.Location = new System.Drawing.Point(1378, 95);
+            this.btnInquire.Name = "btnInquire";
+            this.btnInquire.Size = new System.Drawing.Size(94, 45);
+            this.btnInquire.TabIndex = 24;
+            this.btnInquire.Text = "查询";
+            this.btnInquire.UseVisualStyleBackColor = true;
+            this.btnInquire.Click += new System.EventHandler(this.btnInquire_Click);
             // 
             // FHDW1
             // 
             this.FHDW1.Location = new System.Drawing.Point(450, 221);
             this.FHDW1.Name = "FHDW1";
             this.FHDW1.Size = new System.Drawing.Size(121, 21);
-            this.FHDW1.TabIndex = 0;
+            this.FHDW1.TabIndex = 17;
             // 
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(1147, 95);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(94, 45);
-            this.button3.TabIndex = 6;
+            this.button3.TabIndex = 23;
             this.button3.Text = "打印";
             this.button3.UseVisualStyleBackColor = true;
             // 
@@ -301,14 +303,14 @@
             this.CPH1.MaxLength = 9;
             this.CPH1.Name = "CPH1";
             this.CPH1.Size = new System.Drawing.Size(121, 21);
-            this.CPH1.TabIndex = 0;
+            this.CPH1.TabIndex = 1;
             // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(1378, 8);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(94, 45);
-            this.button2.TabIndex = 5;
+            this.button2.TabIndex = 22;
             this.button2.Text = "结算业务";
             this.button2.UseVisualStyleBackColor = true;
             // 
@@ -326,7 +328,7 @@
             this.btnAdd.Location = new System.Drawing.Point(1147, 8);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(94, 45);
-            this.btnAdd.TabIndex = 4;
+            this.btnAdd.TabIndex = 21;
             this.btnAdd.Text = "生成提货单";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -337,7 +339,7 @@
             this.LSH1.MaxLength = 9;
             this.LSH1.Name = "LSH1";
             this.LSH1.Size = new System.Drawing.Size(121, 21);
-            this.LSH1.TabIndex = 0;
+            this.LSH1.TabIndex = 2;
             // 
             // QFH
             // 
@@ -354,7 +356,7 @@
             this.QFH1.MaxLength = 9;
             this.QFH1.Name = "QFH1";
             this.QFH1.Size = new System.Drawing.Size(121, 21);
-            this.QFH1.TabIndex = 0;
+            this.QFH1.TabIndex = 3;
             // 
             // TDH
             // 
@@ -371,7 +373,7 @@
             this.TDH1.MaxLength = 9;
             this.TDH1.Name = "TDH1";
             this.TDH1.Size = new System.Drawing.Size(121, 21);
-            this.TDH1.TabIndex = 3;
+            this.TDH1.TabIndex = 4;
             // 
             // YFL
             // 
@@ -388,7 +390,7 @@
             this.YFL1.MaxLength = 9;
             this.YFL1.Name = "YFL1";
             this.YFL1.Size = new System.Drawing.Size(121, 21);
-            this.YFL1.TabIndex = 0;
+            this.YFL1.TabIndex = 5;
             // 
             // SFL
             // 
@@ -404,7 +406,7 @@
             this.SFL1.MaxLength = 9;
             this.SFL1.Name = "SFL1";
             this.SFL1.Size = new System.Drawing.Size(121, 21);
-            this.SFL1.TabIndex = 0;
+            this.SFL1.TabIndex = 6;
             // 
             // CZY
             // 
@@ -421,7 +423,7 @@
             this.CZY1.MaxLength = 9;
             this.CZY1.Name = "CZY1";
             this.CZY1.Size = new System.Drawing.Size(121, 21);
-            this.CZY1.TabIndex = 0;
+            this.CZY1.TabIndex = 7;
             // 
             // HTH
             // 
@@ -437,7 +439,7 @@
             this.HTH1.Location = new System.Drawing.Point(640, 95);
             this.HTH1.Name = "HTH1";
             this.HTH1.Size = new System.Drawing.Size(121, 21);
-            this.HTH1.TabIndex = 0;
+            this.HTH1.TabIndex = 8;
             // 
             // FHDW
             // 
@@ -471,7 +473,7 @@
             this.CPGH1.Location = new System.Drawing.Point(830, 95);
             this.CPGH1.Name = "CPGH1";
             this.CPGH1.Size = new System.Drawing.Size(121, 21);
-            this.CPGH1.TabIndex = 0;
+            this.CPGH1.TabIndex = 9;
             // 
             // PCH
             // 
@@ -488,7 +490,7 @@
             this.PCH1.MaxLength = 9;
             this.PCH1.Name = "PCH1";
             this.PCH1.Size = new System.Drawing.Size(121, 21);
-            this.PCH1.TabIndex = 0;
+            this.PCH1.TabIndex = 10;
             // 
             // WLMC
             // 
@@ -504,7 +506,7 @@
             this.WLMC1.Location = new System.Drawing.Point(83, 222);
             this.WLMC1.Name = "WLMC1";
             this.WLMC1.Size = new System.Drawing.Size(121, 21);
-            this.WLMC1.TabIndex = 0;
+            this.WLMC1.TabIndex = 15;
             // 
             // PZ
             // 
@@ -521,7 +523,7 @@
             this.PZ1.MaxLength = 9;
             this.PZ1.Name = "PZ1";
             this.PZ1.Size = new System.Drawing.Size(121, 21);
-            this.PZ1.TabIndex = 0;
+            this.PZ1.TabIndex = 12;
             // 
             // MZ
             // 
@@ -538,7 +540,7 @@
             this.MZ1.MaxLength = 9;
             this.MZ1.Name = "MZ1";
             this.MZ1.Size = new System.Drawing.Size(121, 21);
-            this.MZ1.TabIndex = 0;
+            this.MZ1.TabIndex = 13;
             // 
             // JZ
             // 
@@ -555,7 +557,7 @@
             this.JZ1.MaxLength = 9;
             this.JZ1.Name = "JZ1";
             this.JZ1.Size = new System.Drawing.Size(121, 21);
-            this.JZ1.TabIndex = 0;
+            this.JZ1.TabIndex = 14;
             // 
             // HC
             // 
@@ -571,7 +573,7 @@
             this.HC1.Location = new System.Drawing.Point(260, 221);
             this.HC1.Name = "HC1";
             this.HC1.Size = new System.Drawing.Size(121, 21);
-            this.HC1.TabIndex = 0;
+            this.HC1.TabIndex = 16;
             // 
             // BZ
             // 
@@ -587,7 +589,7 @@
             this.BZ1.Location = new System.Drawing.Point(673, 282);
             this.BZ1.Name = "BZ1";
             this.BZ1.Size = new System.Drawing.Size(278, 21);
-            this.BZ1.TabIndex = 0;
+            this.BZ1.TabIndex = 20;
             // 
             // HWH
             // 
@@ -604,7 +606,7 @@
             this.HWH1.MaxLength = 9;
             this.HWH1.Name = "HWH1";
             this.HWH1.Size = new System.Drawing.Size(121, 21);
-            this.HWH1.TabIndex = 0;
+            this.HWH1.TabIndex = 11;
             // 
             // LX
             // 
@@ -621,7 +623,7 @@
             this.LX1.MaxLength = 9;
             this.LX1.Name = "LX1";
             this.LX1.Size = new System.Drawing.Size(121, 21);
-            this.LX1.TabIndex = 0;
+            this.LX1.TabIndex = 19;
             // 
             // KSSJ
             // 
@@ -663,7 +665,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1546, 789);
+            this.ClientSize = new System.Drawing.Size(1534, 693);
             this.Controls.Add(this.dgvRecords);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.BiaoTi);
@@ -731,7 +733,7 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnInquire;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button button7;

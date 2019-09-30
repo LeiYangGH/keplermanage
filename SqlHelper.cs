@@ -12,7 +12,7 @@ namespace 管理系统
     {
         //定义全局静态变量connstring,用于连接数据库
         
-        public string connstring = "Data Source = DESKTOP-7QAU5M6; Initial Catalog = 管理系统; User ID = sa; Password=123456";
+        public string connstring = "Data Source = DESKTOP-7QAU5M6; Initial Catalog = Management; User ID = sa; Password=123456";
 
         public SqlConnection conn;
 

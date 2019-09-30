@@ -17,7 +17,6 @@ namespace 管理系统
         {
             InitializeComponent();
         }
-        string strid = "";
 
         public void TiDan_Load(object sender, EventArgs e)
         {
@@ -134,20 +133,20 @@ namespace 管理系统
                     string selectedSHDW = this.SHDW1.Text;
                     string selectedLX = this.LX1.Text;
                     string selectedBZ = this.BZ1.Text;
-                    
-                    
-                    
-                    
-                    
-                    
+                    DateTimePicker selectedKSSJ = this.KSSJ1;
+                    DateTimePicker selectedJSSJ = this.JSSJ1;
+
+
+
+
                     MessageBox.Show($"选择的发货方式是{selectedFHFS}准备添加.");
                     TiDan ti = new TiDan();
                     ti.FHFS = selectedFHFS;
                     //为了避免重复单号，违法主键约束，暂时用guid
                     ti.TDH = System.Guid.NewGuid().ToString();
 
-                    //这里你先把各种值写死，暂时不管界面填的什么
-                    ti.CZY = selectedCPH;
+                    
+                    ti.CPH = selectedCPH;
                     ti.LSH = selectedLSH;
                     ti.QFH = selectedQFH;
                     ti.YFL = int.Parse(selectedYFL);
@@ -165,10 +164,11 @@ namespace 管理系统
                     ti.FHDW = selectedFHDW;
                     ti.SHDW = selectedSHDW;
                     ti.LX = selectedLX;
-                    ti.KSSJ = DateTime.Now;
                     ti.JSSJ = DateTime.Now;
                     ti.BZ = selectedBZ;
-                    
+                    ti.KSSJ = selectedKSSJ.Value;
+                    ti.JSSJ = selectedJSSJ.Value;
+
 
 
                     entities.TiDans.Add(ti);
@@ -209,7 +209,7 @@ namespace 管理系统
         {
             using (var entities = new ManagementEntities())
             {
-                //从选中的第一条记录里找到TDH，然后查询数据库，存在则删除
+                //从选中的第一条记录里找到TDH，然后查询数据库，存在则删除             
                 var selectedRows = this.dgvRecords.SelectedRows.OfType<DataGridViewRow>();
                 if(!selectedRows.Any())
                 {
@@ -227,6 +227,29 @@ namespace 管理系统
                 }
                  
             }
+            
+        }
+        private void btnClear_Click(object sender,EventArgs e)
+        {
+            foreach (Control control in this.Controls)
+            {
+                if ((control as GroupBox) != null)
+                {
+                    foreach (Control tempcontrol in control.Controls)
+                    {
+                        if (tempcontrol is TextBox)
+                        {
+                            
+                            tempcontrol.Text = "";
+                        }
+                    }
+                }
+            }
+        }
+        private void btnInquire_Click(object sender,EventArgs e)
+        {
+            Query newform = new Query();
+            newform.Show();
         }
     }
 
