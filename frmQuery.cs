@@ -181,10 +181,31 @@ Expression.Lambda<Func<string, bool>>(CreateLike<TiDan>(typeof(TiDan).GetPropert
             }
         }
 
+        //查询方式3：sql
+        private void QueryWithSql()
+        {
+            using (var entities = new ManagementEntities())
+            {
+                try
+                {
+                    string selectedColumn = this.Cbb1.Text.Trim();
+                    string inputText = this.Textbox2.Text.Trim();
+
+                    string sql = $"select * from [Management].[dbo].[TiDan] where {selectedColumn} like '%{inputText}%'";
+                    this.DgvQuery.DataSource = entities.TiDans.SqlQuery(sql).ToList<TiDan>();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
         private void ToolQuery_Click(object sender, EventArgs e)
         {
-            QueryWithIfColumn();
+            //QueryWithIfColumn();
             //QueryWithDynamic();
+            QueryWithSql();
         }
         private void DgvQuery_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
